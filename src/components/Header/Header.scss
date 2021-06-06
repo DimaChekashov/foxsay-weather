@@ -1,0 +1,14 @@
+$first-color: #20232a;
+$second-color: #61dafb;
+
+.header-bar {
+    background-color: $first-color;
+    padding: 15px 30px 18px 30px;
+    margin-bottom: 40px;
+}
+
+.header-title {
+    margin: 0;
+    color: $second-color;
+    font-size: 2rem;
+}
