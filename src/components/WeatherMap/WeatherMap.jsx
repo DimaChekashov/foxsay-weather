@@ -3,9 +3,12 @@ import { YMaps, Map, ZoomControl } from "react-yandex-maps";
 
 import './WeatherMap.scss';
 
-function WeatherMap(){ 
+function WeatherMap(props){ 
+    // console.log(props.coord.lan);
+    // console.log(props.coord.lat);
     return (
         <div className="weather-map">
+            
             <YMaps>
                 <Map
                     defaultState={{

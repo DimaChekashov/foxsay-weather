@@ -15,12 +15,12 @@ function WeatherTop(){
     }, []);
 
     const { coord, name } = cityWeather;
-    console.log(coord);
+    console.log(cityWeather);
 
     return (
         <div className="weather__top">
             <WeatherFact townName={name}/>
-            <WeatherMap />
+            <WeatherMap coord={coord}/>
         </div>
     )
 }
