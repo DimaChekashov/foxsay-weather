@@ -10,7 +10,7 @@ import "./App.scss";
 function App(props) {
     const cityId = "465543";
     const [loading, setLoading] = useState(false);
-    const weatherState = useSelector((state) => state.weather.weatherState);
+    const data = useSelector((state) => state.weather.data);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,6 +18,8 @@ function App(props) {
             dispatch(addState(state));
         }).catch(console.error);
     }, [dispatch]);
+
+    console.log(data)
 
     return (
         <div className="app">

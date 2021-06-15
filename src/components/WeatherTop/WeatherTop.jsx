@@ -15,7 +15,6 @@ function WeatherTop(){
     }, []);
 
     const { coord, name } = cityWeather;
-    console.log(cityWeather);
 
     return (
         <div className="weather__top">

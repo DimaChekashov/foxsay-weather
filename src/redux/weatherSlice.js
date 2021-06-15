@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const weatherSlice = createSlice({
     name: "weather",
     initialState: {
-        weatherState: {},
+        data: {},
     },
     reducers: {
         addState: (state, action) => {
-            state.weatherState = action;
+            state.data = action;
         },
     },
 });
