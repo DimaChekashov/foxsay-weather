@@ -1,14 +1,17 @@
 $first-color: #20232a;
-$second-color: #61dafb;
+$second-color: #ac00bf;
 
 .header-bar {
     background-color: $first-color;
     padding: 15px 30px 18px 30px;
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .header-title {
     margin: 0;
-    color: $second-color;
+    color: #fff;
     font-size: 2rem;
 }
