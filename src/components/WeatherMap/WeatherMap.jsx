@@ -8,7 +8,6 @@ function WeatherMap(props){
     // console.log(props.coord.lat);
     return (
         <div className="weather-map">
-            
             <YMaps>
                 <Map
                     defaultState={{
