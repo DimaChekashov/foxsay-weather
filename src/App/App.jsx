@@ -5,6 +5,7 @@ import Footer from "../components/Footer/Footer";
 import { useSelector, useDispatch } from 'react-redux';
 import { addState } from '../redux/weatherSlice'
 import { getCity } from "../api/openApi.js";
+import Loader from '../components/Loader/Loader';
 import "./App.scss";
 
 function App(props) {
@@ -19,7 +20,9 @@ function App(props) {
         }).catch(console.error);
     }, [dispatch]);
 
-    console.log(data)
+    if(Object.keys(data).length === 0) {
+        return <Loader/>;
+    } 
 
     return (
         <div className="app">

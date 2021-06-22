@@ -2,23 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { getCity } from "../../api/openApi.js";
 import WeatherFact from '../WeatherFact/WeatherFact.jsx';
 import WeatherMap from '../WeatherMap/WeatherMap';
+import { useSelector} from 'react-redux';
 
 import './WeatherTop.scss';
 
 
 function WeatherTop(){ 
-    const cityId = "465543";
-    const [cityWeather, setCityWeather] = useState({});
+    const data = useSelector((state) => state.weather.data);
 
-    useEffect(() => {
-        getCity(cityId).then(setCityWeather).catch(console.error);
-    }, []);
-
-    const { coord, name } = cityWeather;
+    const { coord } = data;
 
     return (
         <div className="weather__top">
-            <WeatherFact townName={name}/>
+            <WeatherFact/>
             <WeatherMap coord={coord}/>
         </div>
     )

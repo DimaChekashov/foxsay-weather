@@ -7,7 +7,7 @@ export const weatherSlice = createSlice({
     },
     reducers: {
         addState: (state, action) => {
-            state.data = action;
+            state.data = action.payload;
         },
     },
 });
