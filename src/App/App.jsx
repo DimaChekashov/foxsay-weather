@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Header from "../components/Header/Header";
 import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
@@ -10,7 +10,6 @@ import "./App.scss";
 
 function App(props) {
     const cityId = "465543";
-    const [loading, setLoading] = useState(false);
     const data = useSelector((state) => state.weather.data);
     const dispatch = useDispatch();
 

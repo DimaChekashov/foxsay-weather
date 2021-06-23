@@ -1,17 +1,20 @@
 import React from 'react';
 import { YMaps, Map, ZoomControl } from "react-yandex-maps";
+import { useSelector} from 'react-redux';
 
 import './WeatherMap.scss';
 
 function WeatherMap(props){ 
-    // console.log(props.coord.lan);
-    // console.log(props.coord.lat);
+    const data = useSelector((state) => state.weather.data);
+    
+    const { lat, lon } = data.coord;
+
     return (
         <div className="weather-map">
             <YMaps>
                 <Map
                     defaultState={{
-                        center: [55.3195, 52.0694],
+                        center: [lat, lon],
                         controls: [],
                         zoom: 11,
                     }}
