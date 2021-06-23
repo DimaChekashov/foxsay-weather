@@ -11,12 +11,36 @@ const WEATHER_DAILY = `onecall?`;
 const LON = `lon=`;
 const LAT = `lat=`;
 
-export function getCity(cityId) {
-    return fetch(
-        `${instanceCurentWeather + WEATHER_CURRENT + cityId + API_KEY_CURENT}`
-    )
-        .then((response) => handleResponse(response))
-        .catch(handleError);
-}
-
-export function getWeather() {}
+export const getWeather = {
+    getCity(cityId) {
+        return fetch(
+            `${
+                instanceCurentWeather +
+                WEATHER_CURRENT +
+                cityId +
+                API_KEY_CURENT
+            }`
+        )
+            .then((response) => handleResponse(response))
+            .catch(handleError);
+    },
+    getCityDaily(lat, lon) {
+        if (!lat || !lon) {
+            return;
+        }
+        return fetch(
+            `${
+                instanceCurentWeather +
+                WEATHER_DAILY +
+                LAT +
+                lat +
+                "&" +
+                LON +
+                lon +
+                API_KEY_DAILY
+            }`
+        )
+            .then((response) => handleResponse(response))
+            .catch(handleError);
+    },
+};

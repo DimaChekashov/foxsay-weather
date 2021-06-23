@@ -4,7 +4,7 @@ import Main from "../components/Main/Main";
 import Footer from "../components/Footer/Footer";
 import { useSelector, useDispatch } from 'react-redux';
 import { addState } from '../redux/weatherSlice'
-import { getCity } from "../api/openApi.js";
+import { getWeather } from "../api/openApi.js";
 import Loader from '../components/Loader/Loader';
 import "./App.scss";
 
@@ -14,7 +14,7 @@ function App(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        getCity(cityId).then((state) => {
+        getWeather.getCity(cityId).then((state) => {
             dispatch(addState(state));
         }).catch(console.error);
     }, [dispatch]);
