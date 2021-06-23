@@ -29,7 +29,7 @@ function App(props) {
         }
     }, [dispatch, dataCity]);
 
-    if(Object.keys(dataCity).length === 0) {
+    if(Object.keys(dataCityDaily).length === 0 ) {
         return <Loader/>;
     }  else {
     }
