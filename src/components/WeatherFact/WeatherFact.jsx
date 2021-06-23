@@ -9,6 +9,7 @@ function WeatherFact(props){
 
     const {name, main, weather} = data;
     const {temp, feels_like, humidity} = main;
+    const {description, icon} = weather[0];
     
     return (
         <div className="weather-fact">
@@ -20,8 +21,8 @@ function WeatherFact(props){
             </div>
             <div className="weather-fact__right">
                 <div className="weather-fact__icon">
-                    <img src="url.png" className="weather-fact__icon-img" alt="Иконка погоды"/>
-                    <h4 className="weather-fact__icon-text">{weather[0].description}</h4>
+                    <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} className="weather-fact__icon-img" alt="Иконка погоды"/>
+                    <h4 className="weather-fact__icon-text">{description}</h4>
                 </div>
             </div>
         </div>
