@@ -1,13 +1,13 @@
 import React from 'react';
 import { YMaps, Map, ZoomControl } from "react-yandex-maps";
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './WeatherMap.scss';
 
 function WeatherMap(props){ 
-    const data = useSelector((state) => state.weather.data);
+    const dataCity = useSelector((state) => state.weather.dataCity);
     
-    const { lat, lon } = data.coord;
+    const { lat, lon } = dataCity.coord;
 
     return (
         <div className="weather-map">

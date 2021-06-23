@@ -1,13 +1,13 @@
 import React from 'react';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import {numTemp} from '../../utils/utils';
 
 import './WeatherFact.scss';
 
 function WeatherFact(props){ 
-    const data = useSelector((state) => state.weather.data);
+    const dataCity = useSelector((state) => state.weather.dataCity);
 
-    const {name, main, weather} = data;
+    const {name, main, weather} = dataCity;
     const {temp, feels_like, humidity} = main;
     const {description, icon} = weather[0];
     
