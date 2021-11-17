@@ -1,8 +1,9 @@
 import React from "react";
+import SidebarCityCart from "../SidebarCityCart/SidebarCityCart";
 import "./Sidebar.scss";
+import addIcon from "../../assets/add-icon.png";
 
 function Sidebar({ open, onOpen }) {
-
     return (
         <>
             <div className={`sidebar ${open ? "active" : ""}`}>
@@ -23,16 +24,10 @@ function Sidebar({ open, onOpen }) {
                     </button>
                     <h3 className="sidebar-title">FoxSay Weather</h3>
                 </div>
-                <ul>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
-                </ul>
+                <SidebarCityCart />
+                <button className="sidebar-add-cart">
+                    <img src={addIcon} alt="add icon" />
+                </button>
             </div>
             <div
                 className={`sidebar-overflow ${open ? "overflow-active" : ""}`}

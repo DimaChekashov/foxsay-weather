@@ -1,0 +1,31 @@
+.sidebar-cart {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid #dadada;
+    cursor: pointer;
+    transition: 0.3s ease;
+    .city-cart__img {
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+        margin: 0;
+    }
+    .city-cart__today {
+        li {
+            margin: 0 10px 0 0;
+            display: inline-block;
+            &:last-child {
+                border-left: 1px solid #adadad;
+                padding-left: 10px;
+            }
+        }
+    }
+    &:hover {
+        background: rgba(0, 0, 0, 0.15);
+    }
+}
+.sidebar-cart__content {
+    padding-left: 15px;
+}
