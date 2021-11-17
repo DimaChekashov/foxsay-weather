@@ -1,0 +1,52 @@
+.sidebar {
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    width: 400px;
+    height: 100%;
+    box-shadow: 5px 0px 15px 1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease;
+    transform: translateX(-100%);
+}
+
+.active {
+    transform: translateX(0%);
+}
+
+.sidebar__header {
+    height: 73px;
+    border-bottom: 1px solid rgb(168, 168, 168);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.sidebar-title {
+    font-size: 2rem;
+    line-height: 36px;
+    font-weight: 600;
+}
+
+.menu-btn_sidebar {
+    path {
+        fill: #000;
+    }
+}
+
+.sidebar-overflow {
+    position: fixed;
+    z-index: 40;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.overflow-active {
+    display: block;
+}
