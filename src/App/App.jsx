@@ -1,15 +1,19 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+    addCityState,
+    addCityDailyState,
+    addCity,
+} from "../redux/weatherSlice";
+import { getWeather } from "../api/openApi.js";
+
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-import { useSelector, useDispatch } from "react-redux";
-import { addCityState, addCityDailyState } from "../redux/weatherSlice";
-import { getWeather } from "../api/openApi.js";
 import Loader from "../components/Loader/Loader";
-
+import AddCity from "../pages/AddCity/AddCity";
 import Home from "../pages/Home/Home";
 import City from "../pages/City/City";
-import AddCity from "../pages/AddCity/AddCity";
 
 import "./App.scss";
 
@@ -40,14 +44,16 @@ function App(props) {
         }
     }, [dispatch, dataCity]);
 
-    if (Object.keys(dataCityDaily).length === 0) {
-        return <Loader />;
-    } else {
-    }
+    const onAdd = () => {
+        dispatch(addCity("123"));
+    };
+
+    if (Object.keys(dataCityDaily).length === 0) return <Loader />;
 
     return (
         <div className="app">
             <Header />
+            <h2 onClick={onAdd}>HEllo</h2>
             <div className="container">
                 <Routes>
                     <Route path="/" element={<Home />} />
