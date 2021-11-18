@@ -1,11 +1,7 @@
 import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import {
-    addCityState,
-    addCityDailyState,
-    addCity,
-} from "../redux/weatherSlice";
+import { addCityState, addCityDailyState } from "../redux/weatherSlice";
 import { getWeather } from "../api/openApi.js";
 
 import Header from "../components/Header/Header";
@@ -44,16 +40,11 @@ function App(props) {
         }
     }, [dispatch, dataCity]);
 
-    const onAdd = () => {
-        dispatch(addCity("123"));
-    };
-
     if (Object.keys(dataCityDaily).length === 0) return <Loader />;
 
     return (
         <div className="app">
             <Header />
-            <h2 onClick={onAdd}>HEllo</h2>
             <div className="container">
                 <Routes>
                     <Route path="/" element={<Home />} />
