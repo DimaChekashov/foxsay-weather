@@ -13,6 +13,11 @@ const LAT = `lat=`;
 
 export const getWeather = {
     getCity(cityId) {
+        let city = localStorage.getItem(cityId);
+        if (city) {
+            return new Promise((res) => res(JSON.parse(city)));
+        }
+
         return fetch(
             `${
                 instanceCurentWeather +
@@ -22,6 +27,10 @@ export const getWeather = {
             }`
         )
             .then((response) => handleResponse(response))
+            .then((city) => {
+                localStorage.setItem(cityId, JSON.stringify(city));
+                return city;
+            })
             .catch(handleError);
     },
     getCityDaily(lat, lon) {

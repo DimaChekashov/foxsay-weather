@@ -1,9 +1,12 @@
 import React from "react";
 import SidebarCityCart from "../SidebarCityCart/SidebarCityCart";
+import { useSelector } from "react-redux";
 import "./Sidebar.scss";
 import addIcon from "../../assets/add-icon.png";
 
 function Sidebar({ open, onOpen }) {
+    const userCities = useSelector((state) => state.weather.userCities);
+
     return (
         <>
             <div className={`sidebar ${open ? "active" : ""}`}>
@@ -24,7 +27,19 @@ function Sidebar({ open, onOpen }) {
                     </button>
                     <h3 className="sidebar-title">FoxSay Weather</h3>
                 </div>
-                <SidebarCityCart />
+                {userCities
+                    ? userCities.map((city) => (
+                          <SidebarCityCart
+                              key={city.id}
+                              name={city.name}
+                              icon={city.weather[0].icon}
+                              temp={city.main.temp}
+                              tempMin={city.main.temp_min}
+                              tempMax={city.main.temp_max}
+                              weatherStatus={city.weather[0].description}
+                          />
+                      ))
+                    : "Loading"}
                 <button className="sidebar-add-cart">
                     <img src={addIcon} alt="add icon" />
                 </button>
