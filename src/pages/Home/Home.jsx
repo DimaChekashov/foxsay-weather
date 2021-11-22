@@ -5,6 +5,7 @@ import { addCity } from "../../redux/weatherSlice";
 import CityCart from "../../components/CityCart/CityCart";
 import "./Home.scss";
 import addIcon from "../../assets/add-icon.png";
+import { Link } from "react-router-dom";
 
 function Home() {
     const userCitiesId = useSelector((state) => state.weather.userCitiesId);
@@ -37,9 +38,9 @@ function Home() {
                     weatherStatus={city.weather[0].description}
                 />
             ))}
-            <button className="add-cart">
+            <Link to="/add-city" className="add-cart">
                 <img src={addIcon} alt="add icon" />
-            </button>
+            </Link>
         </div>
     );
 }

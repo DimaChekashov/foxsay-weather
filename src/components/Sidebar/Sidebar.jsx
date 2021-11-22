@@ -3,6 +3,7 @@ import SidebarCityCart from "../SidebarCityCart/SidebarCityCart";
 import { useSelector } from "react-redux";
 import "./Sidebar.scss";
 import addIcon from "../../assets/add-icon.png";
+import { Link } from "react-router-dom";
 
 function Sidebar({ open, onOpen }) {
     const userCities = useSelector((state) => state.weather.userCities);
@@ -40,9 +41,13 @@ function Sidebar({ open, onOpen }) {
                           />
                       ))
                     : "Loading"}
-                <button className="sidebar-add-cart">
+                <Link
+                    to="/add-city"
+                    onClick={onOpen}
+                    className="sidebar-add-cart"
+                >
                     <img src={addIcon} alt="add icon" />
-                </button>
+                </Link>
             </div>
             <div
                 className={`sidebar-overflow ${open ? "overflow-active" : ""}`}
