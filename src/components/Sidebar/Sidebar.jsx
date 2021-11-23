@@ -38,6 +38,8 @@ function Sidebar({ open, onOpen }) {
                               tempMin={city.main.temp_min}
                               tempMax={city.main.temp_max}
                               weatherStatus={city.weather[0].description}
+                              link="/city"
+                              sidebarOn={onOpen}
                           />
                       ))
                     : "Loading"}

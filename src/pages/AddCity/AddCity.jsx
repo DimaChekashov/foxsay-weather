@@ -10,6 +10,7 @@ function AddCity() {
                 <input
                     className="search-city-input"
                     placeholder="Найти город..."
+                    autoFocus
                 />
                 <button className="search-city-btn">
                     <img src={searchIcon} alt="search icon" />

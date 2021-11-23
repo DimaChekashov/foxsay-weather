@@ -1,0 +1,15 @@
+.city-wrapper {
+    height: calc(100vh - 217px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.city {
+    width: 100%;
+    max-width: 1300px;
+    border-radius: 20px;
+    background: #fff;
+    padding: 10px;
+    margin: 0 auto;
+}

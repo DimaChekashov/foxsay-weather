@@ -33,7 +33,16 @@ function City() {
         }
     }, [dispatch, dataCity]);
 
-    return <Main />;
+    return (
+        <div className="city-wrapper">
+            <div className="city">
+                <div className="city__top"></div>
+                <div className="city__map"></div>
+                <div className="city__days"></div>
+            </div>
+        </div>
+    );
+    // return <Main />;
 }
 
 export default City;

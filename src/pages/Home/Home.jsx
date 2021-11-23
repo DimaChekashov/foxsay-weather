@@ -36,6 +36,7 @@ function Home() {
                     tempMin={city.main.temp_min}
                     tempMax={city.main.temp_max}
                     weatherStatus={city.weather[0].description}
+                    link="/city"
                 />
             ))}
             <Link to="/add-city" className="add-cart">

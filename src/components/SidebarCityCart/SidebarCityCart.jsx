@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { numTemp } from "../../utils/utils";
 import "./SidebarCityCart.scss";
 
@@ -9,9 +10,11 @@ function SidebarCityCart({
     temp,
     tempMin,
     tempMax,
+    link,
+    sidebarOn,
 }) {
     return (
-        <div className="sidebar-cart">
+        <Link className="sidebar-cart" to={link} onClick={sidebarOn}>
             <div className="city-cart__img">
                 <img
                     src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
@@ -37,7 +40,7 @@ function SidebarCityCart({
                     </li>
                 </ul>
             </div>
-        </div>
+        </Link>
     );
 }
 

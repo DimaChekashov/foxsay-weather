@@ -1,10 +1,11 @@
 import React from "react";
 import "./CityCart.scss";
 import { numTemp } from "../../utils/utils";
+import { Link } from "react-router-dom";
 
-function CityCart({ name, weatherStatus, icon, temp, tempMin, tempMax }) {
+function CityCart({ name, weatherStatus, icon, temp, tempMin, tempMax, link }) {
     return (
-        <div className="city-cart">
+        <Link to={link} className="city-cart">
             <h4 className="city-cart__name">{name}</h4>
             <div className="city-cart__img">
                 <img
@@ -27,7 +28,7 @@ function CityCart({ name, weatherStatus, icon, temp, tempMin, tempMax }) {
                     </span>
                 </li>
             </ul>
-        </div>
+        </Link>
     );
 }
 

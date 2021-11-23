@@ -11,6 +11,8 @@
     transition: box-shadow 0.3s ease;
     cursor: pointer;
     margin: 15px;
+    text-decoration: none;
+    color: #000;
     &:hover {
         box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.1);
     }
