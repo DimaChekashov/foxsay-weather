@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 function CityCart({ name, weatherStatus, icon, temp, tempMin, tempMax, link }) {
     return (
-        <Link to={link} className="city-cart">
+        <Link to={link} className="city-cart fadeInBottom">
             <h4 className="city-cart__name">{name}</h4>
             <div className="city-cart__img">
                 <img

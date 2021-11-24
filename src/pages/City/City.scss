@@ -10,6 +10,116 @@
     max-width: 1300px;
     border-radius: 20px;
     background: #fff;
-    padding: 10px;
     margin: 0 auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "top top"
+        "map days";
+    box-shadow: 0 10px 35px 2px rgba(0, 0, 0, 0.1);
+}
+
+.go-back {
+    min-width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30px 0 -130px;
+    transition: opacity 0.3s ease;
+    img {
+        max-width: 60px;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.city__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 25px 30px 50px 30px;
+    grid-area: top;
+    background: url("../../assets/default.svg") no-repeat 0 / 100%;
+    background-color: rgb(36, 36, 36);
+}
+
+.city-name {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #fff;
+    position: relative;
+    padding-bottom: 10px;
+    margin: 40px 80px 0 0;
+    &:after {
+        content: "";
+        display: block;
+        width: 70%;
+        height: 3px;
+        border-radius: 10px;
+        position: absolute;
+        left: 15%;
+        bottom: 0;
+        background-color: #fff;
+    }
+}
+
+.city-temp {
+    font-size: 5rem;
+    font-weight: 500;
+    margin: 40px 0 0px;
+    text-align: center;
+    padding-left: 15px;
+    color: #fff;
+}
+
+.city-status {
+    font-size: 2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.603);
+    margin: 0 0 30px;
+    text-align: center;
+}
+
+.city__temps {
+    list-style: none;
+    padding: 0 0 0 20px;
+    margin: 0;
+    li {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 45px;
+        color: rgb(238, 238, 238);
+        opacity: 0.8;
+        &:last-child {
+            border-left: 1px solid rgb(238, 238, 238);
+        }
+    }
+}
+
+.city__temps-label {
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.city__temps-temp {
+    font-size: 1.3rem;
+}
+
+.city__map {
+    border-top: 1px solid rgb(230, 230, 230);
+    border-right: 1px solid rgb(230, 230, 230);
+    grid-area: map;
+}
+
+.city__days {
+    grid-area: days;
+    border-top: 1px solid rgb(230, 230, 230);
+    width: 100%;
 }

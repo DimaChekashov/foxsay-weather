@@ -39,7 +39,7 @@ function Home() {
                     link="/city"
                 />
             ))}
-            <Link to="/add-city" className="add-cart">
+            <Link to="/add-city" className="add-cart fadeInBottom">
                 <img src={addIcon} alt="add icon" />
             </Link>
         </div>
