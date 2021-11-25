@@ -27,7 +27,7 @@ function Home() {
 
     return (
         <div className="cart-grid">
-            {userCities.map((city) => (
+            {userCities.map((city, index) => (
                 <CityCart
                     key={city.id}
                     name={city.name}
@@ -36,7 +36,7 @@ function Home() {
                     tempMin={city.main.temp_min}
                     tempMax={city.main.temp_max}
                     weatherStatus={city.weather[0].description}
-                    link="/city"
+                    link={`/city/${index}`}
                 />
             ))}
             <Link to="/add-city" className="add-cart fadeInBottom">

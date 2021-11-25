@@ -29,7 +29,7 @@ function Sidebar({ open, onOpen }) {
                     <h3 className="sidebar-title">FoxSay Weather</h3>
                 </div>
                 {userCities
-                    ? userCities.map((city) => (
+                    ? userCities.map((city, index) => (
                           <SidebarCityCart
                               key={city.id}
                               name={city.name}
@@ -38,7 +38,7 @@ function Sidebar({ open, onOpen }) {
                               tempMin={city.main.temp_min}
                               tempMax={city.main.temp_max}
                               weatherStatus={city.weather[0].description}
-                              link="/city"
+                              link={`/city/${index}`}
                               sidebarOn={onOpen}
                           />
                       ))
