@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Search from "../Search/Search";
 import Time from "../Time/Time";
 import Sidebar from "../Sidebar/Sidebar";
 
@@ -49,7 +48,6 @@ function Header() {
                 <h3>FoxSay Weather</h3>
             </Link>
             <Time />
-            <Search />
         </div>
     );
 }

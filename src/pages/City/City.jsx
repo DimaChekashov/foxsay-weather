@@ -49,7 +49,7 @@ function City() {
                     <WeatherMap cityCoord={coord} />
                 </div>
                 <div className="city__days">
-                    <WeatherDays />
+                    <WeatherDays cityCoord={coord} />
                 </div>
             </div>
         </div>

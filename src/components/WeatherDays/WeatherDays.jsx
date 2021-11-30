@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getWeather } from "../../api/openApi.js";
 import { numTemp } from "../../utils/utils";
+import { addCityDailyState } from "../../redux/weatherSlice";
 
 import "./WeatherDays.scss";
 
-function WeatherDays() {
+function WeatherDays({ cityCoord }) {
+    const dataCityDaily = useSelector((state) => state.weather.dataCityDaily);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        getWeather
+            .getCityDaily(cityCoord.lat, cityCoord.lon)
+            .then((state) => {
+                dispatch(addCityDailyState(state));
+            })
+            .catch(console.error);
+    }, [cityCoord.lat, cityCoord.lon, dispatch]);
+
     return (
         <div className="days">
             <div className="days__item">
