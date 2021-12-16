@@ -3,15 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 export const weatherSlice = createSlice({
     name: "weather",
     initialState: {
-        dataCity: {},
         dataCityDaily: {},
         userCities: [],
         userCitiesId: ["465543", "523750"],
     },
     reducers: {
-        addCityState: (state, action) => {
-            state.dataCity = action.payload;
-        },
         addCityDailyState: (state, action) => {
             state.dataCityDaily = action.payload;
         },
@@ -19,7 +15,6 @@ export const weatherSlice = createSlice({
             const idx = state.userCities.findIndex(
                 ({ id }) => id === payload.id
             );
-
             if (idx > -1) {
                 state.userCities[idx] = payload;
             } else {
