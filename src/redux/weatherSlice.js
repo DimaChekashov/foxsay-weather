@@ -5,11 +5,11 @@ export const weatherSlice = createSlice({
     initialState: {
         dataCityDaily: {},
         userCities: [],
-        userCitiesId: ["465543", "523750"],
+        userCitiesId: [465543, 523750],
     },
     reducers: {
-        addCityDailyState: (state, action) => {
-            state.dataCityDaily = action.payload;
+        addCityDaily: (state, { payload }) => {
+            state.dataCityDaily = payload;
         },
         addCity: (state, { payload }) => {
             const idx = state.userCities.findIndex(
@@ -27,7 +27,6 @@ export const weatherSlice = createSlice({
     },
 });
 
-export const { addCityState, addCityDailyState, addCity } =
-    weatherSlice.actions;
+export const { addCityDaily, addCity, addCityId } = weatherSlice.actions;
 
 export default weatherSlice.reducer;

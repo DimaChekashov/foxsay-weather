@@ -55,7 +55,12 @@ export const getWeather = {
             })
             .catch(handleError);
     },
-    getCityDaily(lat, lon) {
+    getCityDaily(lat, lon, name) {
+        let cityDaily = localStorage.getItem(name);
+        if (cityDaily) {
+            return new Promise((res) => res(JSON.parse(cityDaily)));
+        }
+
         if (!lat || !lon) {
             return;
         }
@@ -72,6 +77,10 @@ export const getWeather = {
             }`
         )
             .then((response) => handleResponse(response))
+            .then((cityDaily) => {
+                localStorage.setItem(name, JSON.stringify(cityDaily));
+                return cityDaily;
+            })
             .catch(handleError);
     },
 };

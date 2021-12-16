@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import "./AddCity.scss";
 import { getWeather } from "../../api/openApi.js";
-import { addCity } from "../../redux/weatherSlice";
+import { addCity, addCityId } from "../../redux/weatherSlice";
 
 import searchIcon from "../../assets/search-icon.svg";
 import { useState } from "react";
@@ -17,6 +17,7 @@ function AddCity() {
             .getCityByName(searchInput)
             .then((state) => {
                 dispatch(addCity(state));
+                dispatch(addCityId(state.id));
             })
             .catch(console.error);
         setSearchInput("");
