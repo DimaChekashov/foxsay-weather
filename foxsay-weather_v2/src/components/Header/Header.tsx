@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Time from '../Time/Time';
 import './Header.sass';
 
 interface Props {
