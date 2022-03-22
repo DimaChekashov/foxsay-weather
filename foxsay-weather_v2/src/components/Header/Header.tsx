@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Sidebar from '../Sidebar/Sidebar';
 import Time from '../Time/Time';
 import './Header.sass';
 
@@ -45,6 +46,7 @@ export default class Header extends React.Component<Props, State> {
     render() {
         return (
             <header className="header">
+                <Sidebar open={this.state.open} onOpen={this.onOpenSidebar} />
                 <button className="header__menu-btn" onClick={this.onOpenSidebar}>
                     <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 75V125H500V75H0ZM0 225V275H500V225H0ZM0 375V425H500V375H0Z" fill="white" />
