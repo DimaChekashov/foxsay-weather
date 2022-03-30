@@ -3,7 +3,6 @@ import { ITime } from "../../types/types";
 import "./Time.sass";
 
 interface Props {
-
 }
 
 interface State {
@@ -35,13 +34,14 @@ export default class Time extends React.Component<Props, State> {
         }, 1000);
     }
 
+    private isTen = (num: number) => (num >= 10 ? num : `0${num}`);
+
     render() {
         const { h, m, s } = this.state.time;
         return (
             <div className="time">
                 Время:
-                {/* eslint-disable-next-line */}
-                <span className="time__frame">{`${h >= 10 ? h : "0" + h}:${m >= 10 ? m : "0" + m}:${s >= 10 ? s : "0" + s}`}</span>
+                <span className="time__frame">{`${this.isTen(h)}:${this.isTen(m)}:${this.isTen(s)}`}</span>
             </div>
         )
     }
