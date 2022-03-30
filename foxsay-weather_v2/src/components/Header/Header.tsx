@@ -21,11 +21,8 @@ export default class Header extends React.Component<Props, State> {
     }
 
     private disableScrolling = () => {
-        const x = window.scrollX;
-        const y = window.scrollY;
-        window.onscroll = () => {
-            window.scrollTo(x, y);
-        };
+        const { scrollX, scrollY } = window;
+        window.onscroll = () => window.scrollTo(scrollX, scrollY);
     };
 
     private enableScrolling = () => {
@@ -33,10 +30,8 @@ export default class Header extends React.Component<Props, State> {
     };
 
     private onOpenSidebar = () => {
-        this.setState({
-            // eslint-disable-next-line
-            open: !this.state.open
-        })
+        this.setState((prevState) => ({ open: !prevState.open }));
+
         if (this.state.open) {
             this.enableScrolling();
         } else {

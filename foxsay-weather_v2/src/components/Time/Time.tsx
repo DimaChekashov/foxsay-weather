@@ -40,7 +40,7 @@ export default class Time extends React.Component<Props, State> {
         const { h, m, s } = this.state.time;
         return (
             <div className="time">
-                Время:
+                Время:&nbsp;
                 <span className="time__frame">{`${this.isTen(h)}:${this.isTen(m)}:${this.isTen(s)}`}</span>
             </div>
         )

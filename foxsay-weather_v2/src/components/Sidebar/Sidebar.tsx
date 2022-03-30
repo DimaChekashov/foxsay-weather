@@ -42,10 +42,10 @@ export default class Sidebar extends React.Component<Props, State> {
                         <img src={addIcon} alt="add icon" />
                     </Link>
                 </div>
-                {/* eslint-disable-next-line */}
                 <div
                     className={`sidebar-overflow ${this.props.open ? "active" : ""}`}
                     onClick={this.props.onOpen}
+                    onKeyDown={this.props.onOpen}
                 />
             </>
         )
