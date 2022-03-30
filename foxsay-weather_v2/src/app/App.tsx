@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header/Header";
 import Home from "../pages/Home/Home";
+import Footer from "../components/Footer/Footer";
 import "./App.sass";
 
 interface Props {
@@ -18,6 +19,7 @@ export default class App extends React.Component<Props> {
             <div className="app">
                 <Header />
                 <Home />
+                <Footer />
             </div>
         )
     }
