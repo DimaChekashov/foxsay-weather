@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Sidebar.sass';
+import React from "react";
+import { Link } from "react-router-dom";
 import addIcon from "../../assets/add-icon.png";
+import "./Sidebar.sass";
 
 interface Props {
     open: boolean;
@@ -17,17 +17,19 @@ export default class Sidebar extends React.Component<Props, State> {
         this.state = {
         }
     }
+
     render() {
         return (
             <>
                 <div className={`sidebar ${this.props.open ? "active" : ""}`}>
                     <div className="sidebar__header">
                         <button
+                            type="button"
                             className="sidebar__menu-btn"
                             onClick={this.props.onOpen}
                         >
                             <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 75V125H500V75H0ZM0 225V275H500V225H0ZM0 375V425H500V375H0Z" fill="white"/>
+                                <path d="M0 75V125H500V75H0ZM0 225V275H500V225H0ZM0 375V425H500V375H0Z" fill="white" />
                             </svg>
                         </button>
                         <h3 className="sidebar__title">FoxSay Weather</h3>
@@ -40,6 +42,7 @@ export default class Sidebar extends React.Component<Props, State> {
                         <img src={addIcon} alt="add icon" />
                     </Link>
                 </div>
+                {/* eslint-disable-next-line */}
                 <div
                     className={`sidebar-overflow ${this.props.open ? "active" : ""}`}
                     onClick={this.props.onOpen}
