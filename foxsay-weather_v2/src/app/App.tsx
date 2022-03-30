@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import AddCity from "../pages/AddCity/AddCity";
 import Footer from "../components/Footer/Footer";
 import "./App.sass";
+import City from "../pages/City/City";
 
 interface Props {
 
@@ -24,9 +25,9 @@ export default class App extends React.Component<Props> {
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="add-city" element={<AddCity />} />
-                        {/* <Route path="city" element={<City />}>
+                        <Route path="city">
                             <Route path=":itemId" element={<City />} />
-                        </Route> */}
+                        </Route>
                     </Routes>
                 </div>
                 <Footer />
