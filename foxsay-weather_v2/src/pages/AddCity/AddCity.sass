@@ -1,0 +1,45 @@
+.search-city-wrapper
+    height: calc(100vh - 217px)
+    display: flex
+    align-items: center
+    justify-content: center
+
+.search-city
+    display: flex
+    align-items: flex-start
+    border-radius: 4px
+    overflow: hidden
+    max-width: 700px
+    margin: 0 auto
+    animation: showSearch 1.5s ease
+    box-shadow: 0 10px 35px 1px rgba(0, 0, 0, 0.05)
+    &__input
+        border: 0
+        font-size: 2rem
+        padding: 30px 40px
+        width: 100%
+        &:focus
+            outline: none
+    &__btn
+        border: 0
+        border-radius: 0
+        background: var(--primary-color)
+        height: 97px
+        min-width: 97px
+        cursor: pointer
+        transition: 0.3s ease
+        &:hover
+            background: var(--primary-hovered-color)
+        img
+            width: 70px
+            display: inline-block
+
+@keyframes showSearch
+    0%
+        max-width: 180px
+        opacity: 0
+    50%
+        max-width: 180px
+        opacity: 1
+    100%
+        max-width: 700px

@@ -1,8 +1,10 @@
 import React from "react";
 import { observer } from "mobx-react";
+import { Link } from "react-router-dom";
 import getWeather from "../../api/openApi";
-import "./Home.sass";
+import addIcon from "../../assets/add-icon.png";
 import CityCart from "../../components/CityCart/CityCart";
+import "./Home.sass";
 
 interface Props {
 
@@ -43,7 +45,7 @@ export default class Home extends React.Component<Props, State> {
         }
 
         return (
-            <div>
+            <div className="cart-grid">
                 <CityCart
                     key={city.id}
                     name={city.name}
@@ -55,6 +57,9 @@ export default class Home extends React.Component<Props, State> {
                     // link={`/city/${index}`}
                     link={`/city/${1}`}
                 />
+                <Link to="/add-city" className="add-cart fadeInBottom">
+                    <img src={addIcon} alt="add icon" />
+                </Link>
             </div>
         )  
     }
