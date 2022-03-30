@@ -36,6 +36,7 @@ module.exports = {
         "react/jsx-indent": [2, 4],
         "react/sort-comp": "off",
         "jsx-a11y/no-static-element-interactions": "off",
+        "import/prefer-default-export": "off",
         "no-unsafe-optional-chaining": "off",
         "no-nonoctal-decimal-escape": "off",
         "no-trailing-spaces": "off",
