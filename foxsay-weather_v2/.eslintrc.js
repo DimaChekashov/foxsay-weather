@@ -45,5 +45,6 @@ module.exports = {
         "linebreak-style": "off",
         "default-case": "off",
         "arrow-parens": "off",
+        "no-plusplus": "off"
     }
 };

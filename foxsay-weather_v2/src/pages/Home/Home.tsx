@@ -1,4 +1,5 @@
 import React from "react";
+import { observable } from "mobx";
 import { observer } from "mobx-react";
 import { Link } from "react-router-dom";
 import getWeather from "../../api/openApi";
@@ -6,22 +7,21 @@ import addIcon from "../../assets/add-icon.png";
 import CityCart from "../../components/CityCart/CityCart";
 import "./Home.sass";
 
-interface Props {
+interface Props{
 
 }
 
 interface State {
     isLoaded: boolean,
-    city: any,
+    city: any
 }
 
-@observer
-export default class Home extends React.Component<Props, State> {
+@observer export default class Home extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
             isLoaded: false,
-            city: {},
+            city: {}
         }
     }
 
