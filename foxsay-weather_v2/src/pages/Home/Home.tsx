@@ -6,6 +6,7 @@ import getWeather from "../../api/openApi";
 import addIcon from "../../assets/add-icon.png";
 import CityCart from "../../components/CityCart/CityCart";
 import "./Home.sass";
+import Loader from "../../components/Loader/Loader";
 
 interface Props{
 
@@ -41,7 +42,7 @@ interface State {
         const { city, isLoaded } = this.state;
 
         if (!isLoaded) {
-            return <div>Empty city</div>;
+            return <Loader />;
         }
 
         return (

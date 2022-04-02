@@ -4,6 +4,7 @@ import { numTemp } from "../../utils/utils";
 import backIcon from "../../assets/icon-back.svg";
 import "./City.sass";
 import getWeather from "../../api/openApi";
+import WeatherMap from "../../components/WeatherMap/WeatherMap";
 
 interface Props {
 }
@@ -85,7 +86,7 @@ export default class City extends React.Component<Props, State> {
                         <h2 className="city__name">{name}</h2>
                     </div>
                     <div className="city__map">
-                        {/* <WeatherMap cityCoord={coord} /> */}
+                        <WeatherMap cityCoord={{ lat: 55.3195, lon: 52.0694 }} />
                     </div>
                     <div className="city__days">
                         {/* <WeatherDays

@@ -40,7 +40,7 @@ export default class Sidebar extends React.Component<Props, State> {
         const { city, isLoaded } = this.state;
 
         if (!isLoaded) {
-            return <div>Empty city</div>;
+            return <div>Loading</div>;
         }
 
         return (
