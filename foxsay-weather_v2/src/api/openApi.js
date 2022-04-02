@@ -63,10 +63,7 @@ const getWeather = {
             // eslint-disable-next-line
             return new Promise((res) => res(JSON.parse(cityDaily)));
         }
-
-        if (!lat || !lon) {
-            return false;
-        }
+        
         return fetch(
             `${
                 instanceCurentWeather

@@ -5,6 +5,7 @@ import backIcon from "../../assets/icon-back.svg";
 import "./City.sass";
 import getWeather from "../../api/openApi";
 import WeatherMap from "../../components/WeatherMap/WeatherMap";
+import WeatherDays from "../../components/WeatherDays/WeatherDays";
 
 interface Props {
 }
@@ -89,11 +90,10 @@ export default class City extends React.Component<Props, State> {
                         <WeatherMap cityCoord={{ lat: 55.3195, lon: 52.0694 }} />
                     </div>
                     <div className="city__days">
-                        {/* <WeatherDays
+                        <WeatherDays
                             cityCoord={coord}
                             name={name}
-                            itemId={itemId}
-                        /> */}
+                        />
                     </div>
                 </div>
             </div>
