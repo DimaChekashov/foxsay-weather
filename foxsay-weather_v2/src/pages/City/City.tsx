@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { numTemp } from "../../utils/utils";
 import backIcon from "../../assets/icon-back.svg";
 import "./City.sass";
@@ -7,7 +7,13 @@ import getWeather from "../../api/openApi";
 import WeatherMap from "../../components/WeatherMap/WeatherMap";
 import WeatherDays from "../../components/WeatherDays/WeatherDays";
 
+function withParams(Component: React.ElementType) {
+    // eslint-disable-next-line
+    return (props: any) => <Component {...props} params={useParams()} />
+}
+
 interface Props {
+    params: any
 }
 
 interface State {
@@ -15,7 +21,7 @@ interface State {
     city: any
 }
 
-export default class City extends React.Component<Props, State> {
+class City extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
@@ -26,7 +32,7 @@ export default class City extends React.Component<Props, State> {
 
     componentDidMount() {
         getWeather
-            .getCity(465543)
+            .getCity(this.props.params.itemId)
             .then((city) => {
                 this.setState({
                     city,
@@ -100,3 +106,5 @@ export default class City extends React.Component<Props, State> {
         );
     }
 }
+
+export default withParams(City);
