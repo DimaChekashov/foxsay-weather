@@ -1,5 +1,6 @@
 import React from "react";
 import searchIcon from "../../assets/search-icon.svg";
+import cities from "../../db/city-database";
 import "./AddCity.sass";
 
 interface Props {
@@ -42,14 +43,12 @@ export default class AddCity extends React.Component<Props, State> {
                 </div>
 
                 <ul className="city-list">
-                    <li className="city-list__item">
-                        <div className="city-list__item-count">1</div>
-                        <div className="city-list__item-text">Zainsk</div>
-                    </li>
-                    <li className="city-list__item">
-                        <div className="city-list__item-count">2</div>
-                        <div className="city-list__item-text">Naberezhnye chelny</div>
-                    </li>
+                    {cities.map((city, i) => (
+                        <li className="city-list__item" key={city.id}>
+                            <div className="city-list__item-count">{i + 1}</div>
+                            <div className="city-list__item-text">{city.name}</div>
+                        </li>
+                    ))}
                 </ul>
             </div>
         )
