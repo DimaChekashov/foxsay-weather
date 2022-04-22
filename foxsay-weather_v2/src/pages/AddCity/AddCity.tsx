@@ -8,20 +8,33 @@ interface Props {
 }
 
 interface State {
-    searchInput: string
+    searchInput: string,
+    cities: { id: number, name: string }[]
 }
 
 export default class AddCity extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
+            cities: [],
             searchInput: ""
         }
     }
 
-    onSearch() {
+    componentDidMount() {
         this.setState({
-            searchInput: ""
+           cities
+        })
+    }
+    
+    onSearch = () => {
+        const filterdCity = cities.filter((city) => {
+            return city.name.includes(this.state.searchInput);
+        })
+        
+        this.setState({
+            searchInput: "",
+            cities: filterdCity
         });
     }
 
@@ -33,8 +46,8 @@ export default class AddCity extends React.Component<Props, State> {
                         className="search-city__input"
                         placeholder="Найти город..."
                         value={this.state.searchInput}
-                        onChange={(e) => this.setState({
-                            searchInput: e.target.value
+                        onChange={(event) => this.setState({
+                            searchInput: event.target.value
                         })}
                     />
                     <button className="search-city__btn" onClick={this.onSearch}>
@@ -43,7 +56,7 @@ export default class AddCity extends React.Component<Props, State> {
                 </div>
 
                 <ul className="city-list">
-                    {cities.map((city, i) => (
+                    {this.state.cities.map((city, i) => (
                         <li className="city-list__item" key={city.id}>
                             <div className="city-list__item-count">{i + 1}</div>
                             <div className="city-list__item-text">{city.name}</div>
