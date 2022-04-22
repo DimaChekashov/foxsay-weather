@@ -40,6 +40,17 @@ export default class AddCity extends React.Component<Props, State> {
                         <img src={searchIcon} alt="search icon" />
                     </button>
                 </div>
+
+                <ul className="city-list">
+                    <li className="city-list__item">
+                        <div className="city-list__item-count">1</div>
+                        <div className="city-list__item-text">Zainsk</div>
+                    </li>
+                    <li className="city-list__item">
+                        <div className="city-list__item-count">2</div>
+                        <div className="city-list__item-text">Naberezhnye chelny</div>
+                    </li>
+                </ul>
             </div>
         )
     }
