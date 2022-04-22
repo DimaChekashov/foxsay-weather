@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import searchIcon from "../../assets/search-icon.svg";
 import cities from "../../db/city-database";
 import "./AddCity.sass";
@@ -59,7 +60,9 @@ export default class AddCity extends React.Component<Props, State> {
                     {this.state.cities.map((city, i) => (
                         <li className="city-list__item" key={city.id}>
                             <div className="city-list__item-count">{i + 1}</div>
-                            <div className="city-list__item-text">{city.name}</div>
+                            <Link to={`/city/${city.id}`} className="city-list__item-text">
+                                {city.name}
+                            </Link>
                         </li>
                     ))}
                 </ul>
