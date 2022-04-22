@@ -93,7 +93,7 @@ class City extends React.Component<Props, State> {
                         <h2 className="city__name">{name}</h2>
                     </div>
                     <div className="city__map">
-                        <WeatherMap cityCoord={{ lat: 55.3195, lon: 52.0694 }} />
+                        <WeatherMap cityCoord={{ lat: coord.lat, lon: coord.lon }} />
                     </div>
                     <div className="city__days">
                         <WeatherDays

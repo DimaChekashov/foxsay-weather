@@ -2,14 +2,14 @@ import { handleResponse, handleError } from "./apiUtils";
 
 const KEY_ID = "b298c68afd6a947d0bef1b16adecf90f";
 
-const instanceCurentWeather = "http://api.openweathermap.org/data/2.5/";
+const instanceCurentWeather = "https://api.openweathermap.org/data/2.5/";
 
 const API_KEY_CURENT = `&units=metric&lang=ru&appid=${KEY_ID}`;
 const API_KEY_DAILY = `&exclude=minutely&units=metric&lang=ru&appid=${KEY_ID}`;
 const WEATHER_CURRENT = "weather?id=";
 const WEATHER_BY_NAME_CURRENT = "weather?q=";
 const WEATHER_DAILY = "onecall?";
-const LON = "lon=";
+const LON = "&lon=";
 const LAT = "lat=";
 
 const getWeather = {
@@ -70,8 +70,7 @@ const getWeather = {
                 + WEATHER_DAILY
                 + LAT
                 + lat
-            }"&"${
-                LON
+                + LON
                 + lon
                 + API_KEY_DAILY
             }`
