@@ -1,6 +1,5 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { observer } from "mobx-react";
 import { numTemp } from "../../utils/utils";
 import backIcon from "../../assets/icon-back.svg";
 import getWeather from "../../api/openApi";
@@ -46,6 +45,27 @@ class City extends React.Component<Props, State> {
             })
             .catch(console.error);
     }
+
+    componentDidUpdate() {
+        getWeather
+            .getCity(this.props.params.itemId)
+            .then((city) => {
+                if (city.id !== this.state.city.id) {
+                    this.setState({
+                        city,
+                        isLoaded: true
+                    });
+                    Weather.addCity(city);
+                }
+            })
+            .catch(console.error);
+    }
+
+    UNSAFE_componentWillReceiveProps() {
+        this.setState({
+            isLoaded: false 
+        });
+    }
     
     render() {
         const { city, isLoaded } = this.state;
@@ -53,8 +73,7 @@ class City extends React.Component<Props, State> {
             main,
             wind, 
             name, 
-            coord, 
-            itemId, 
+            coord,
             weather, 
         } = city;
 
