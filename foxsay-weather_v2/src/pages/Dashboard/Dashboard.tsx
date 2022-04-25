@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import getWeather from "../../api/openApi";
 import addIcon from "../../assets/add-icon.png";
 import CityCart from "../../components/CityCart/CityCart";
-import "./Dashboard.sass";
+import Weather from "../../store/Weather";
 import Loader from "../../components/Loader/Loader";
+import "./Dashboard.sass";
 
 interface Props{
 
@@ -35,6 +36,8 @@ interface State {
                 })
             })
             .catch(console.error);
+            
+        console.log(Weather.cities[0].name);
     }
 
     render() {
@@ -46,17 +49,20 @@ interface State {
 
         return (
             <div className="cart-grid">
-                <CityCart
-                    key={city.id}
-                    name={city.name}
-                    icon={city.weather[0].icon}
-                    temp={city.main.temp}
-                    tempMin={city.main.temp_min}
-                    tempMax={city.main.temp_max}
-                    weatherStatus={city.weather[0].description}
-                    // link={`/city/${index}`}
-                    link={`/city/${1}`}
-                />
+                {Weather.cities.map((cityItem) => {
+                    return (
+                        <CityCart
+                            key={cityItem.id}
+                            name={cityItem.name}
+                            icon={cityItem.weather[0].icon}
+                            temp={cityItem.main.temp}
+                            tempMin={cityItem.main.temp_min}
+                            tempMax={cityItem.main.temp_max}
+                            weatherStatus={cityItem.weather[0].description}
+                            link={`/city/${cityItem.id}`}
+                        />
+                    );
+                })}
                 <Link to="/add-city" className="add-cart fadeInBottom">
                     <img src={addIcon} alt="add icon" />
                 </Link>

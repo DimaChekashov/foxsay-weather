@@ -1,37 +1,23 @@
 import { makeAutoObservable } from "mobx";
 
 class Weather {
-    initialState = {
-        dataCityDaily: {},
-        userCities: [],
-        userCitiesId: [465543, 523750],
-    };
+    citiesId = [];
+
+    cities = [];
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    addCityDaily(cityDaily) {
-        this.initialState.dataCityDaily = cityDaily;
-    }
+    addId = (id) => this.citiesId.push(id);
 
-    addCity(city) {
-        const idx = this.initialState.userCities.findIndex(
-            ({ id }) => id === city.id
-        );
+    addCity = (data) => {
+        const idx = this.cities.findIndex(({ id }) => id === data.id);
         if (idx > -1) {
-            this.initialState.userCities[idx] = city;
+            this.cities[idx] = data;
         } else {
-            this.initialState.userCities.push(city);
+            this.cities.push(data);
         }
-    }
-
-    addCityId(id) {
-        this.initialState.userCitiesId.push(id);
-    }
-
-    add() {
-        this.initialState.userCitiesId.push(12121);
     }
 }
 

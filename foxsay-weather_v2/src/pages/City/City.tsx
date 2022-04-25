@@ -1,11 +1,13 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { observer } from "mobx-react";
 import { numTemp } from "../../utils/utils";
 import backIcon from "../../assets/icon-back.svg";
-import "./City.sass";
 import getWeather from "../../api/openApi";
 import WeatherMap from "../../components/WeatherMap/WeatherMap";
 import WeatherDays from "../../components/WeatherDays/WeatherDays";
+import Weather from "../../store/Weather";
+import "./City.sass";
 
 function withParams(Component: React.ElementType) {
     // eslint-disable-next-line
@@ -31,13 +33,16 @@ class City extends React.Component<Props, State> {
     }
 
     componentDidMount() {
+        Weather.addId(this.props.params.itemId);
+
         getWeather
             .getCity(this.props.params.itemId)
             .then((city) => {
                 this.setState({
                     city,
                     isLoaded: true
-                })
+                });
+                Weather.addCity(city);
             })
             .catch(console.error);
     }

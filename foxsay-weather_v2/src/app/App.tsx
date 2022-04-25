@@ -5,8 +5,8 @@ import Dashboard from "../pages/Dashboard/Dashboard";
 import AddCity from "../pages/AddCity/AddCity";
 import Footer from "../components/Footer/Footer";
 import City from "../pages/City/City";
-import "./App.sass";
 import Greeting from "../pages/Greeting/Greeting";
+import "./App.sass";
 
 interface Props {
 
