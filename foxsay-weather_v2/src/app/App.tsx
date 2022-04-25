@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "../components/Header/Header";
-import Home from "../pages/Home/Home";
+import Dashboard from "../pages/Dashboard/Dashboard";
 import AddCity from "../pages/AddCity/AddCity";
 import Footer from "../components/Footer/Footer";
 import City from "../pages/City/City";
@@ -25,7 +25,7 @@ export default class App extends React.Component<Props> {
                 <div className="container">
                     <Routes>
                         <Route path="/" element={<Greeting />} />
-                        <Route path="/dashboard" element={<Home />} />
+                        <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="add-city" element={<AddCity />} />
                         <Route path="city">
                             <Route path=":itemId" element={<City />} />

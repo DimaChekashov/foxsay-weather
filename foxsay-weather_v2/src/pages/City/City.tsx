@@ -59,7 +59,7 @@ class City extends React.Component<Props, State> {
 
         return (
             <div className="city-wrapper">
-                <Link to="/" className="go-back">
+                <Link to="/dashboard" className="go-back">
                     <img src={backIcon} alt="Иконка назад" />
                 </Link>
                 <div className="city fadeInBottom">

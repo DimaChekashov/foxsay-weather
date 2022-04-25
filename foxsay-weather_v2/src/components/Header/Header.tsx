@@ -48,7 +48,7 @@ export default class Header extends React.Component<Props, State> {
                         <path d="M0 75V125H500V75H0ZM0 225V275H500V225H0ZM0 375V425H500V375H0Z" fill="white" />
                     </svg>
                 </button>
-                <Link to="/" className="header__title">FoxSay Weather</Link>
+                <Link to="/dashboard" className="header__title">FoxSay Weather</Link>
                 <Time />
             </header>
         )
