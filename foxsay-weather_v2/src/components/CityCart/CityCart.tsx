@@ -4,13 +4,13 @@ import { numTemp } from "../../utils/utils";
 import "./CityCart.sass";
 
 interface Props {
-    link: string,
-    name: string,
-    icon: string,
-    weatherStatus: string,
-    temp: number,
-    tempMin: number,
-    tempMax: number,
+    link: string;
+    name: string;
+    icon: string;
+    weatherStatus: string;
+    temp: number;
+    tempMin: number;
+    tempMax: number;
 }
 
 interface State {

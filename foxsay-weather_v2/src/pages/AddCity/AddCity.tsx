@@ -9,8 +9,8 @@ interface Props {
 }
 
 interface State {
-    searchInput: string,
-    cities: { id: number, name: string }[]
+    searchInput: string;
+    cities: { id: number, name: string }[];
 }
 
 export default class AddCity extends React.Component<Props, State> {

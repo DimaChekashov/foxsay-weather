@@ -9,7 +9,7 @@ interface Props {
 }
 
 interface State {
-    open: boolean,
+    open: boolean;
 }
 
 export default class Header extends React.Component<Props, State> {

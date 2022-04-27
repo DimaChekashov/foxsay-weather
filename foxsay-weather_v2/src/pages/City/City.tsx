@@ -14,12 +14,12 @@ function withParams(Component: React.ElementType) {
 }
 
 interface Props {
-    params: any
+    params: any;
 }
 
 interface State {
-    isLoaded: boolean,
-    city: any
+    isLoaded: boolean;
+    city: any;
 }
 
 class City extends React.Component<Props, State> {

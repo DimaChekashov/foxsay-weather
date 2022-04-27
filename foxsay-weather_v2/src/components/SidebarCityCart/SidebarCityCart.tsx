@@ -4,14 +4,14 @@ import { numTemp } from "../../utils/utils";
 import "./SidebarCityCart.sass";
 
 interface Props {
-    link: string,
-    name: string,
-    icon: string,
-    weatherStatus: string,
-    temp: number,
-    tempMin: number,
-    tempMax: number,
-    sidebarOn: () => void
+    link: string;
+    name: string;
+    icon: string;
+    weatherStatus: string;
+    temp: number;
+    tempMin: number;
+    tempMax: number;
+    sidebarOn: () => void;
 }
 
 interface State {

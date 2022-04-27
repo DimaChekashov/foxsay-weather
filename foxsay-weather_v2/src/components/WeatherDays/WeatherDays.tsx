@@ -9,12 +9,12 @@ interface Props {
 }
 
 interface State {
-    isLoaded: boolean,
+    isLoaded: boolean;
     cityDaily: {
-        lat: number,
-        lon: number,
-        daily: any
-    }
+        lat: number;
+        lon: number;
+        daily: any;
+    };
 }
 
 export default class WeatherDays extends React.Component<Props, State> {
