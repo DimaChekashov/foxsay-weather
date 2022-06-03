@@ -1,17 +1,18 @@
 import { makeAutoObservable } from "mobx";
+import { City } from "../types/types";
 
 class Weather {
-    citiesId = [];
+    citiesId: number[] = [];
 
-    cities = [];
+    cities: City[] = [];
 
     constructor() {
         makeAutoObservable(this);
     }
 
-    addId = (id) => this.citiesId.push(id);
+    addId = (id: number) => this.citiesId.push(id);
 
-    addCity = (data) => {
+    addCity = (data: City) => {
         const idx = this.cities.findIndex(({ id }) => id === data.id);
         if (idx > -1) {
             this.cities[idx] = data;

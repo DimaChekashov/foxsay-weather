@@ -1,4 +1,7 @@
-const cities = [
+const cities: {
+    id: number,
+    name: string
+}[] = [
     {
         id: 465543,
         name: "Zainsk",

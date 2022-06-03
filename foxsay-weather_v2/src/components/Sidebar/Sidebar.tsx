@@ -4,6 +4,7 @@ import addIcon from "../../assets/add-icon.png";
 import SidebarCityCart from "../SidebarCityCart/SidebarCityCart";
 import Weather from "../../store/Weather";
 import "./Sidebar.sass";
+import { City } from "../../types/types";
 
 interface Props {
     open: boolean;
@@ -38,7 +39,7 @@ export default class Sidebar extends React.Component<Props, State> {
                         </button>
                         <h3 className="sidebar__title">FoxSay Weather</h3>
                     </div>
-                    {Weather.cities ? Weather.cities.map((cityItem) => {
+                    {Weather.cities ? Weather.cities.map((cityItem: City) => {
                         return (
                             <SidebarCityCart
                                 key={cityItem.id}
