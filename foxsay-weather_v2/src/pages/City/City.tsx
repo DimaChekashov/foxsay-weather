@@ -7,6 +7,7 @@ import WeatherMap from "../../components/WeatherMap/WeatherMap";
 import WeatherDays from "../../components/WeatherDays/WeatherDays";
 import Weather from "../../store/Weather";
 import "./City.sass";
+import { ROUTES } from "../../const/routes";
 
 function withParams(Component: React.ElementType) {
     // eslint-disable-next-line
@@ -83,7 +84,7 @@ class City extends React.Component<Props, State> {
 
         return (
             <div className="city-wrapper">
-                <Link to="/dashboard" className="go-back">
+                <Link to={ROUTES.DASHBOARD} className="go-back">
                     <img src={backIcon} alt="Иконка назад" />
                 </Link>
                 <div className="city fadeInBottom">

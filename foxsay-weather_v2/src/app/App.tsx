@@ -7,6 +7,7 @@ import Footer from "../components/Footer/Footer";
 import City from "../pages/City/City";
 import Greeting from "../pages/Greeting/Greeting";
 import "./App.sass";
+import { ROUTES } from "../const/routes";
 
 interface Props {
 
@@ -24,10 +25,10 @@ export default class App extends React.Component<Props> {
                 <Header />
                 <div className="container">
                     <Routes>
-                        <Route path="/" element={<Greeting />} />
-                        <Route path="/dashboard" element={<Dashboard />} />
-                        <Route path="add-city" element={<AddCity />} />
-                        <Route path="city">
+                        <Route path={ROUTES.MAIN_PAGE} element={<Greeting />} />
+                        <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
+                        <Route path={ROUTES.ADD_CITY} element={<AddCity />} />
+                        <Route path={ROUTES.CITY}>
                             <Route path=":itemId" element={<City />} />
                         </Route>
                     </Routes>

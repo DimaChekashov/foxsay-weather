@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import searchIcon from "../../assets/search-icon.svg";
+import { ROUTES } from "../../const/routes";
 import cities from "../../db/city-database";
 import "./AddCity.sass";
 
@@ -60,7 +61,7 @@ export default class AddCity extends React.Component<Props, State> {
                     {this.state.cities.map((city, i) => (
                         <li className="city-list__item" key={city.id}>
                             <div className="city-list__item-count">{i + 1}</div>
-                            <Link to={`/city/${city.id}`} className="city-list__item-text">
+                            <Link to={`${ROUTES.CITY}/${city.id}`} className="city-list__item-text">
                                 {city.name}
                             </Link>
                         </li>

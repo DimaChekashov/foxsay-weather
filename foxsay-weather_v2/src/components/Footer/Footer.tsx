@@ -18,9 +18,17 @@ export default class Footer extends React.Component<Props, State> {
         return (
             <div className="footer">
                 <ul className="footer__list">
-                    <li><a href="https://career.habr.com/foxsayjs">DmitryChekashov</a></li>
+                    <li>
+                        <a href="https://career.habr.com/foxsayjs" target="_blank" rel="noopener noreferrer">
+                            DmitryChekashov
+                        </a>
+                    </li>
                     |
-                    <li><a href="https://github.com/DimaChekashov">GitHub</a></li>
+                    <li>
+                        <a href="https://github.com/DimaChekashov" target="_blank" rel="noopener noreferrer">
+                            GitHub
+                        </a>
+                    </li>
                 </ul>
             </div>
         )

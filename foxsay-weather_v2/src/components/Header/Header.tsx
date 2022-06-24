@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../../const/routes";
 import Sidebar from "../Sidebar/Sidebar";
 import Time from "../Time/Time";
 import "./Header.sass";
@@ -48,7 +49,7 @@ export default class Header extends React.Component<Props, State> {
                         <path d="M0 75V125H500V75H0ZM0 225V275H500V225H0ZM0 375V425H500V375H0Z" fill="white" />
                     </svg>
                 </button>
-                <Link to="/dashboard" className="header__title">FoxSay Weather</Link>
+                <Link to={ROUTES.DASHBOARD} className="header__title">FoxSay Weather</Link>
                 <Time />
             </header>
         )

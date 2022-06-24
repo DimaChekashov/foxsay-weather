@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { ROUTES } from "../../const/routes";
 
 import "./Greeting.sass";
 
@@ -26,7 +27,7 @@ export default class Greeting extends React.Component<Props, State> {
                     <br />
                     Нажми на кнопку ниже для выбора города
                 </p>
-                <Link to="/add-city" className="greeting__btn">Выбор города</Link>
+                <Link to={ROUTES.ADD_CITY} className="greeting__btn">Выбор города</Link>
             </div>
         )
     }

@@ -5,6 +5,7 @@ import SidebarCityCart from "../SidebarCityCart/SidebarCityCart";
 import Weather from "../../store/Weather";
 import "./Sidebar.sass";
 import { City } from "../../types/types";
+import { ROUTES } from "../../const/routes";
 
 interface Props {
     open: boolean;
@@ -49,13 +50,13 @@ export default class Sidebar extends React.Component<Props, State> {
                                 tempMin={cityItem.main.temp_min}
                                 tempMax={cityItem.main.temp_max}
                                 weatherStatus={cityItem.weather[0].description}
-                                link={`/city/${cityItem.id}`}
+                                link={`${ROUTES.CITY}/${cityItem.id}`}
                                 sidebarOn={this.props.onOpen}
                             />
                         );
                     }) : ""}
                     <Link
-                        to="/add-city"
+                        to={ROUTES.ADD_CITY}
                         onClick={this.props.onOpen}
                         className="sidebar__add-cart"
                     >
