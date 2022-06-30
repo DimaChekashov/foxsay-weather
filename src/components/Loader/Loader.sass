@@ -1,6 +1,3 @@
-$first-color: #20232a
-$second-color: #61dafb
-
 .loader
     width: 100%
     height: 100%
@@ -11,14 +8,14 @@ $second-color: #61dafb
     display: flex
     align-items: center
     justify-content: center
-    background-color: $first-color
+    background-color: var(--primary-color)
     &-spin
-        border: 12px solid #ffffff
-        border-top: 12px solid $second-color
+        border: 8px solid #ffffff
+        border-top: 8px solid var(--gray-color)
         border-radius: 50%
         width: 120px
         height: 120px
-        animation: spin 2s linear infinite
+        animation: spin 1s linear infinite
         display: inline-block
 
 @keyframes spin

@@ -24,7 +24,6 @@ export default class Greeting extends React.Component<Props, State> {
                 <h2 className="greeting__title">Приветствую!</h2>
                 <p className="greeting__desc">
                     На этом сайте вы сможете узнать погоду в своем родном городе и не только.
-                    <br />
                     Нажми на кнопку ниже для выбора города
                 </p>
                 <Link to={ROUTES.ADD_CITY} className="greeting__btn">Выбор города</Link>

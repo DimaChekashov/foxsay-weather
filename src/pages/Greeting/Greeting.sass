@@ -1,26 +1,24 @@
 .greeting
     padding: 50px 20px 40px
     margin: 100px 0 100px
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    border-radius: 10px
-    animation: showGreeting 1s
+    text-align: center
     &__title
+        color: var(--dark-color)
+        font-weight: 600
         font-size: 70px
         line-height: 1.5
         margin-bottom: 20px
     &__desc
-        font-size: 30px
+        font-size: 24px
         line-height: 1.5
-        margin-bottom: 50px
         font-weight: 300
-        font-size: #636363
+        color: var(--gray-color)
         text-align: center
+        max-width: 700px
+        margin: 0 auto 50px
     &__btn
         display: inline-block
-        color: #ffffff
+        color: var(--white-color)
         font-size: 25px
         line-height: 1.4
         text-decoration: none
@@ -30,9 +28,3 @@
         transition: background-color 0.3s ease-in-out
         &:hover
             background-color: var(--primary-hovered-color)
-
-@keyframes showGreeting
-    0%
-        transform: scale(0)
-    100%
-        transform: scale(1)
