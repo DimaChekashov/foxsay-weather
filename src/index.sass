@@ -27,6 +27,9 @@ body
 .fadeInBottom
     animation: fadeInBottom 1s ease
 
+.zoomOutIn
+    animation: zoomOutIn 1s ease
+
 @keyframes fadeInBottom
     0%
         opacity: 0
@@ -34,3 +37,11 @@ body
     100%
         opacity: 1
         transform: translateY(0%)
+
+@keyframes zoomOutIn
+    0%
+        opacity: 0
+        transform: scale(0)
+    100%
+        opacity: 1
+        transform: scale(1)

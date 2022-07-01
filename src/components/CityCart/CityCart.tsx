@@ -35,7 +35,7 @@ export default class CityCart extends React.Component<Props, State> {
         } = this.props;
         
         return (
-            <Link to={link} className="city-cart fadeInBottom">
+            <Link to={link} className="city-cart zoomOutIn">
                 <h4 className="city-cart__name">{name}</h4>
                 <div className="city-cart__img">
                     <img

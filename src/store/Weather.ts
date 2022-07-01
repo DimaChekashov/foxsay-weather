@@ -23,7 +23,6 @@ class Weather {
     }
 
     loadLocalCity = (data: City[]) => {
-        console.log(data)
         this.cities = data;
     }
 }

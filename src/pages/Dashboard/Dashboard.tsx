@@ -43,7 +43,7 @@ export default class Dashboard extends React.Component<Props, State> {
                     );
                 }) : ""}
 
-                <Link to={ROUTES.ADD_CITY} className="add-cart fadeInBottom">
+                <Link to={ROUTES.ADD_CITY} className="add-cart zoomOutIn">
                     <img src={addIcon} alt="add icon" />
                 </Link>
             </div>
