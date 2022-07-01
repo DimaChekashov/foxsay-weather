@@ -19,6 +19,12 @@ class Weather {
         } else {
             this.cities.push(data);
         }
+        localStorage.setItem("localCities", JSON.stringify(this.cities));
+    }
+
+    loadLocalCity = (data: City[]) => {
+        console.log(data)
+        this.cities = data;
     }
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { observer } from "mobx-react";
 import addIcon from "../../assets/add-icon.png";
 import CityCart from "../../components/CityCart/CityCart";
 import { ROUTES } from "../../const/routes";
@@ -13,6 +14,7 @@ interface Props{
 interface State {
 }
 
+@observer 
 export default class Dashboard extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);

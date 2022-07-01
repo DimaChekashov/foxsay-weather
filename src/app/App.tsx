@@ -7,6 +7,7 @@ import Footer from "../components/Footer/Footer";
 import City from "../pages/City/City";
 import Greeting from "../pages/Greeting/Greeting";
 import { ROUTES } from "../const/routes";
+import Weather from "../store/Weather";
 import "./App.sass";
 
 interface Props {
@@ -17,6 +18,11 @@ export default class App extends React.Component<Props> {
     constructor(props: Props) {
         super(props);
         this.state = {}
+    }
+
+    componentDidMount() {
+        const cities = localStorage.getItem("localCities") as string;
+        Weather.loadLocalCity(JSON.parse(cities));
     }
 
     render() {
