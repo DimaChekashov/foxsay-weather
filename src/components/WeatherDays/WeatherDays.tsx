@@ -4,6 +4,8 @@ import { CityCoord, Daily } from "../../types/types";
 import { numTemp } from "../../utils/utils";
 import "./WeatherDays.sass";
 
+const dayOfWeek = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница"];
+
 interface Props {
     cityCoord: CityCoord;
     name: string;
@@ -53,66 +55,21 @@ export default class WeatherDays extends React.Component<Props, State> {
 
         return (
             <div className="days">
-                <div className="days__item">
-                    <h3 className="days__item-week">Понедельник</h3>
-                    <div className="days__item-img">
-                        <img
-                            src={`https://openweathermap.org/img/wn/${daily[0].weather[0].icon}@2x.png`}
-                            alt="test"
-                        />
+                {daily.slice(0, 5).map((day, index) => (
+                    // eslint-disable-next-line react/no-array-index-key
+                    <div className="days__item" key={index}>
+                        <h3 className="days__item-week">{dayOfWeek[index]}</h3>
+                        <div className="days__item-img">
+                            <img
+                                src={`https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png`}
+                                alt="test"
+                            />
+                        </div>
+                        <h4 className="days__item-temp">
+                            {numTemp(day.temp.day)}
+                        </h4>
                     </div>
-                    <h4 className="days__item-temp">
-                        {numTemp(daily[0].temp.day)}
-                    </h4>
-                </div>
-                <div className="days__item">
-                    <h3 className="days__item-week">Вторник</h3>
-                    <div className="days__item-img">
-                        <img
-                            src={`https://openweathermap.org/img/wn/${daily[1].weather[0].icon}@2x.png`}
-                            alt="test"
-                        />
-                    </div>
-                    <h4 className="days__item-temp">
-                        {numTemp(daily[1].temp.day)}
-                    </h4>
-                </div>
-                <div className="days__item">
-                    <h3 className="days__item-week">Среда</h3>
-                    <div className="days__item-img">
-                        <img
-                            src={`https://openweathermap.org/img/wn/${daily[2].weather[0].icon}@2x.png`}
-                            alt="test"
-                        />
-                    </div>
-                    <h4 className="days__item-temp">
-                        {numTemp(daily[2].temp.day)}
-                    </h4>
-                </div>
-                <div className="days__item">
-                    <h3 className="days__item-week">Четверг</h3>
-                    <div className="days__item-img">
-                        <img
-                            src={`https://openweathermap.org/img/wn/${daily[3].weather[0].icon}@2x.png`}
-                            alt="test"
-                        />
-                    </div>
-                    <h4 className="days__item-temp">
-                        {numTemp(daily[3].temp.day)}
-                    </h4>
-                </div>
-                <div className="days__item">
-                    <h3 className="days__item-week">Пятница</h3>
-                    <div className="days__item-img">
-                        <img
-                            src={`https://openweathermap.org/img/wn/${daily[4].weather[0].icon}@2x.png`}
-                            alt="test"
-                        />
-                    </div>
-                    <h4 className="days__item-temp">
-                        {numTemp(daily[4].temp.day)}
-                    </h4>
-                </div>
+                ))}
             </div>
         );
     }
