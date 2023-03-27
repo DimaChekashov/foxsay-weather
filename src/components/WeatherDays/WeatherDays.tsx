@@ -1,6 +1,6 @@
 import React from "react";
 import getWeather from "../../api/openApi";
-import { CityCoord } from "../../types/types";
+import { CityCoord, Daily } from "../../types/types";
 import { numTemp } from "../../utils/utils";
 import "./WeatherDays.sass";
 
@@ -14,7 +14,7 @@ interface State {
     cityDaily: {
         lat: number;
         lon: number;
-        daily: any;
+        daily: Daily[];
     };
 }
 
@@ -26,7 +26,7 @@ export default class WeatherDays extends React.Component<Props, State> {
             cityDaily: {
                 lat: 0,
                 lon: 0,
-                daily: {}
+                daily: []
             }
         };
     }

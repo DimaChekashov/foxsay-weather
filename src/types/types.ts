@@ -46,7 +46,7 @@ export interface City {
 
 export interface CityDaily {
     current: object;
-    daily: [];
+    daily: Daily[];
     hourly: [];
     lat: number;
     lon: number;
@@ -60,5 +60,12 @@ export interface CityCoord {
 }
 
 export interface Daily {
-
+    temp: {
+        day: number;
+    }
+    weather: [
+        {
+            icon: string;
+        }
+    ]
 }
