@@ -10,10 +10,7 @@ export interface City {
         all: number;
     };
     cod: number;
-    coord: {
-        lat: number;
-        lon: number;    
-    };
+    coord: CityCoord;
     dt: number;
     id: number;
     main: {
@@ -55,4 +52,13 @@ export interface CityDaily {
     lon: number;
     timezone: string;
     timezone_offset: number;
+}
+
+export interface CityCoord {
+    lat: number;
+    lon: number;
+}
+
+export interface Daily {
+
 }

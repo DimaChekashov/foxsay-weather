@@ -9,6 +9,7 @@ import franceImg from "../../assets/towns/france.svg";
 import qatarImg from "../../assets/towns/qatar.svg";
 import rabatImg from "../../assets/towns/rabat.svg";
 import tunisImg from "../../assets/towns/tunis.svg";
+import { City as CityModel } from "../../types/types";
 import "./City.sass";
 
 function withParams(Component: React.ElementType) {
@@ -17,57 +18,56 @@ function withParams(Component: React.ElementType) {
 }
 
 interface Props {
-    params: any;
+    params: {
+        cityId: number;
+    };
 }
 
 interface State {
-    isLoaded: boolean;
-    city: any;
+    loading: boolean;
+    city?: CityModel;
 }
 
 class City extends React.Component<Props, State> {
     constructor(props: Props) {
         super(props);
         this.state = {
-            isLoaded: false,
-            city: {}
+            loading: false
         };
     }
 
     componentDidMount() {
-        Weather.addId(this.props.params.itemId);
+        this.addNewCity();
+    }
+
+    componentDidUpdate(prevProps: Props) {
+        const { cityId } = this.props.params;
+
+        if (cityId === prevProps.params.cityId) return;
+
+        const city = Weather.cities.find(({ id }) => id === cityId);
+
+        if (city) {
+            // eslint-disable-next-line react/no-did-update-set-state
+            this.setState({ city });
+        } else {
+            this.addNewCity();
+        }
+    }
+
+    addNewCity() {
+        this.setState({ loading: true });
 
         getWeather
-            .getCity(this.props.params.itemId)
+            .getCity(this.props.params.cityId)
             .then((city) => {
                 this.setState({
                     city,
-                    isLoaded: true
+                    loading: false
                 });
                 Weather.addCity(city);
             })
             .catch(console.error);
-    }
-
-    componentDidUpdate() {
-        getWeather
-            .getCity(this.props.params.itemId)
-            .then((city) => {
-                if (city.id !== this.state.city.id) {
-                    this.setState({
-                        city,
-                        isLoaded: true
-                    });
-                    Weather.addCity(city);
-                }
-            })
-            .catch(console.error);
-    }
-
-    UNSAFE_componentWillReceiveProps() {
-        this.setState({
-            isLoaded: false 
-        });
     }
 
     getRandomTownImg = () => {
@@ -76,7 +76,16 @@ class City extends React.Component<Props, State> {
     }
     
     render() {
-        const { city, isLoaded } = this.state;
+        const { city, loading } = this.state;
+
+        if (loading) {
+            return <div>Loading...</div>;
+        }
+
+        if (!city) {
+            return <div>Not Found</div>;
+        }
+
         const { 
             main,
             wind, 
@@ -84,10 +93,6 @@ class City extends React.Component<Props, State> {
             coord,
             weather, 
         } = city;
-
-        if (!isLoaded) {
-            return <div>Not Found</div>;
-        }
 
         return (
             <div className="city-wrapper">

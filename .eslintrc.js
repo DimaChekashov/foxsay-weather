@@ -45,6 +45,8 @@ module.exports = {
         "linebreak-style": "off",
         "default-case": "off",
         "arrow-parens": "off",
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "no-console": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 };

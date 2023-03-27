@@ -1,10 +1,11 @@
 import React from "react";
 import getWeather from "../../api/openApi";
+import { CityCoord } from "../../types/types";
 import { numTemp } from "../../utils/utils";
 import "./WeatherDays.sass";
 
 interface Props {
-    cityCoord: any;
+    cityCoord: CityCoord;
     name: string;
 }
 

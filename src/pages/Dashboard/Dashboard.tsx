@@ -21,10 +21,6 @@ export default class Dashboard extends React.Component<Props, State> {
         this.state = { }
     }
 
-    componentDidMount() {
-
-    }
-
     render() {
         return (
             <div className="cart-grid">

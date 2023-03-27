@@ -21,8 +21,10 @@ export default class App extends React.Component<Props> {
     }
 
     componentDidMount() {
-        const cities = localStorage.getItem("localCities") as string;
-        Weather.loadLocalCity(JSON.parse(cities));
+        const cities = localStorage.getItem("localCities");
+        if (cities !== null) {
+            Weather.loadLocalCity(JSON.parse(cities));
+        }
     }
 
     render() {
@@ -35,7 +37,7 @@ export default class App extends React.Component<Props> {
                         <Route path={ROUTES.DASHBOARD} element={<Dashboard />} />
                         <Route path={ROUTES.ADD_CITY} element={<AddCity />} />
                         <Route path={ROUTES.CITY}>
-                            <Route path=":itemId" element={<City />} />
+                            <Route path=":cityId" element={<City />} />
                         </Route>
                     </Routes>
                 </div>
