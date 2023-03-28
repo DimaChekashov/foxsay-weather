@@ -5,9 +5,7 @@ import { ROUTES } from "../../const/routes";
 import cities from "../../db/city-database";
 import "./AddCity.sass";
 
-interface Props {
-
-}
+interface Props { }
 
 interface State {
     searchInput: string;

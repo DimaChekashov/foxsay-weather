@@ -24,6 +24,7 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/no-empty-interface": "off",
         "@typescript-eslint/quotes": [2, "double"],
         "@typescript-eslint/comma-dangle": "off",
@@ -39,6 +40,7 @@ module.exports = {
         "import/prefer-default-export": "off",
         "no-unsafe-optional-chaining": "off",
         "no-nonoctal-decimal-escape": "off",
+        "no-promise-executor-return": "off",
         "no-trailing-spaces": "off",
         "consistent-return": "off",
         "arrow-body-style": "off",
@@ -47,6 +49,5 @@ module.exports = {
         "arrow-parens": "off",
         "no-plusplus": "off",
         "no-console": "off",
-        "@typescript-eslint/explicit-module-boundary-types": "off"
     }
 };

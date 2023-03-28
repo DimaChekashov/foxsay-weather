@@ -16,7 +16,6 @@ const getWeather = {
     getCity(cityId) {
         const city = localStorage.getItem(cityId);
         if (city) {
-            // eslint-disable-next-line
             return new Promise((res) => res(JSON.parse(city)));
         }
 
@@ -38,7 +37,6 @@ const getWeather = {
     getCityByName(cityName) {
         const city = localStorage.getItem(cityName);
         if (city) {
-            // eslint-disable-next-line
             return new Promise((res) => res(JSON.parse(city)));
         }
 
@@ -60,7 +58,6 @@ const getWeather = {
     getCityDaily(lat, lon, name) {
         const cityDaily = localStorage.getItem(name);
         if (cityDaily) {
-            // eslint-disable-next-line
             return new Promise((res) => res(JSON.parse(cityDaily)));
         }
         

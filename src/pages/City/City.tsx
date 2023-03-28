@@ -40,7 +40,7 @@ class City extends React.Component<Props, State> {
         this.addNewCity();
     }
 
-    componentDidUpdate(prevProps: Props) {
+    componentDidUpdate(prevProps: Props, prevState: State) {
         const { cityId } = this.props.params;
 
         if (cityId === prevProps.params.cityId) return;
